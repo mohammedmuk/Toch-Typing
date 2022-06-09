@@ -1,0 +1,255 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* Start main page */
+
+.app{
+    background-color: #084f8e;
+    background-image: url(../img/sky2.png), linear-gradient(0deg, #084f8e, #083466 80%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    background-image: url(imgs/stars.png);
+    background-size: cover;
+}
+.app header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    color: #fff;
+}
+
+.app header nav ul{
+    display: flex;
+}
+.app header nav ul li{
+    margin-right:50px;
+    list-style: none;
+    cursor: pointer;
+}
+.app section{
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.app section .moon img{
+    height: 200px;
+    box-shadow: 0 0 25px #fff;
+    border-radius: 50%;
+}
+.app section .text{
+    width: 528px;
+}
+.app section .text p{
+    padding-right: 5px;
+    border-right: 2px solid #fff;
+    font-size: 40px;
+    width: 497;
+    overflow: hidden;
+    color: #fff;
+    margin-bottom: 30px;
+    animation : text-effect 2s steps(28), blank .5s infinite;
+    white-space: nowrap;
+}
+.app section .text button a{
+    display: block;
+    color: #084f8e;
+    text-decoration: none;
+    padding: 10px 50px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.app .clouds{
+    width: 100%;
+}
+.app .clouds div{
+    height: 120px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    transition: .5s;
+}
+.app .clouds .cloud1{
+    background-image: url(imgs/clouds1.png);
+}
+.app .clouds .cloud2{
+    background-image: url(imgs/clouds2.png);
+    transform: translateY(-20px);
+}
+.app .clouds .cloud3{
+    background-image: url(imgs/clouds3.png);
+    transform: translateY(-50px);
+}
+@keyframes text-effect{
+    from{
+     width: 0;
+    }
+    to{
+    width: 528px;
+    }
+}
+@keyframes blank{
+    from{
+    border-right-color: #fff;
+    }
+    to{
+    border-right-color: transparent;
+    }
+}
+
+/* End main page */
+
+/* Start Typing Page */
+
+.bullets-box{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    z-index: 2;
+    transition: .5s;
+}
+
+.bullets{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    gap: 15px;
+}
+.bullets span{ 
+    display: block;
+    height: 30px;
+    width: 30px;
+    background-color: #084f8e;
+    border-radius: 50%;
+    animation: bullet-up infinite 1.5s;
+}
+.bullets span:nth-of-type(2){
+  animation-delay: .1s;
+}
+.bullets span:nth-of-type(3){
+    animation-delay: .2s;
+}
+
+.container{
+    position: relative;
+    width: 1000px;
+    margin: 0 150px;
+}
+
+.container .words{
+    margin-top: 150px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    height: 350px;
+}
+.container .words span{
+    font-size: 35px;
+    color: rgb(153, 153, 153);
+    margin: -3px;
+    height: 45px;
+    width: 30px;
+    text-align: center;
+}
+
+.type-speed{
+    position: absolute;
+    right: 0;
+    margin-top: 50px;
+}
+.type-speed .wpm-num{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.type-speed .wpm-num::after{
+    content: "WPM";
+    font-size: 13px;
+    position: absolute;
+    top: -10px;
+}
+
+.popup-box{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #00000085;
+    z-index: 3;
+}
+.popup{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 300px;
+    width: 500px;
+    transform: translate(-50%, -50%) scale(0);
+    background-color: rgb(0, 102, 255);
+    animation: popup forwards 1s;
+}
+.popup button{
+    position: absolute;
+    left: 50%;
+    bottom: 60px;
+    transform: translate(-50%, 0);
+    padding: 10px 35px;
+    font-size: 18px;
+    border: 0;
+    background: #fff;
+    color: rgb(0, 102, 255);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.wpm-div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 40px;
+}
+.wpm-div span{
+    margin-left: 10px;
+}
+@keyframes wrong{
+    50%{
+        transform: translateY(-5px) rotate(10deg);
+    }
+    100%{
+        transform: translateY(0) rotate(-10deg);
+    }
+}
+
+
+@keyframes popup{
+    to{
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes bullet-up{
+    50%{
+        transform: translateY(-40px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+/* End Typing Page */

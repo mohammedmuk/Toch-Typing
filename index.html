@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speed Toch Typing</title>
+    <link rel="stylesheet" href="sheet.css">
+</head>
+<body>
+    <div class="app">
+        <header>
+            <h1>TypingClub</h1>
+            <nav>
+                <ul>
+                    <li>Get Started</li>
+                    <li>School Edition</li>
+                    <li>Store</li>
+                    <li>Language</li>
+                    <li>Login</li>
+                </ul>
+            </nav>
+        </header>
+        <section>
+            <div class="moon">
+                <img src="imgs/moon.png" alt="moon">
+            </div>
+            <div class="text">
+                <p>Challenge Your Writing Skills!</p>
+                <button><a href="page/index.html">Get Started</a></button>
+            </div>
+        </section>
+        <div class="clouds">
+            <div class="cloud3"></div>
+            <div class="cloud2"></div>
+            <div class="cloud1"></div>
+        </div>
+    </div>
+
+ <script>
+    let cloudN1 = 0,
+        cloudN2 = 0;
+    setInterval(() => {
+        document.querySelector('.clouds .cloud3').style.backgroundPositionX = ''+ cloudN1++ +'px'
+        document.querySelector('.clouds .cloud1').style.backgroundPositionX = ''+ cloudN2-- +'px'
+    },100)
+ </script>   
+</body>
+</html>
