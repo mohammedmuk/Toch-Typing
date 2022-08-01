@@ -74,7 +74,7 @@ let words = [
     
             }
 
-        }, 5000)
+        }, 7000)
     }
 
 setInterval(() => min++,60000)
