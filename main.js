@@ -11,27 +11,13 @@ let words = [
    wordsConatiner = document.querySelector('.words'),
    wpm = document.querySelector('.wpm-num'),
    sentence = words[rendomNumber],
-   audio_1 = document.querySelector('.audio_1'),
-   audio_2 = document.querySelector('.audio_2'),
    number = 0 ,
    typedEnter = 0 ,
    min = 1;
     
     for (i = 0; i < sentence.length; i++){
 
-        let audio1 = document.createElement('audio'),
-
-            audio2 = document.createElement('audio'),
-        
-            theSpan = document.createElement('span');
-
-        audio1.src = "../audio/mixkit-hard-single-key-press-in-a-laptop-2542.wav"
-
-        audio2.src = '../audio/mixkit-game-show-buzz-in-3090.wav'
-
-        audio_1.appendChild(audio1)
-
-        audio_2.appendChild(audio2)
+        let theSpan = document.createElement('span');
         
         theSpan.textContent = sentence[i]
     
@@ -48,8 +34,6 @@ let words = [
                     wordsConatiner.children[number].style.backgroundColor = "rgb(12 1 98 / 47%)"
         
                     wordsConatiner.children[number].style.color = '#fff'
-    
-                    audio_1.children[number].play()
         
                     typedEnter++
     
@@ -63,7 +47,6 @@ let words = [
         
                     wordsConatiner.children[number].style.animation = 'wrong .5s'
     
-                    audio_2.children[number].play()
                 }
     
                 number++
@@ -74,7 +57,7 @@ let words = [
     
             }
 
-        }, 7000)
+        }, 2000)
     }
 
 setInterval(() => min++,60000)
@@ -85,7 +68,6 @@ window.onclick = (e) => e.target.className === 'popup-button' ? window.location.
 function speed(typeEnter, min){
     let calc = (typeEnter / 5) / min
     wpm.textContent = calc
-    console.log(calc);
  }
  
  function popup(){
